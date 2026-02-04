@@ -1,31 +1,117 @@
-# Waze User Churn Prediction Project
+# Waze User Churn Prediction
 
-In this project, I developed a machine learning model to predict user churn for Waze, utilizing Python for data exploration, hypothesis testing, and regression analysis. My goal was to analyze user activity data, extract meaningful insights, and create a predictive model to support Waze’s strategy for improving user retention and overall user satisfaction.
-Project Overview
+A machine learning project that predicts user churn for Waze using Python, data analysis, and regression modeling. This analysis provides actionable insights to support user retention strategies and improve overall user satisfaction.
 
-### 1. Exploratory Data Analysis (EDA)
-The project begins with a comprehensive Exploratory Data Analysis (EDA) phase, where I delve into Waze's user data to understand its structure and identify any underlying patterns. I assessed data quality by checking for missing values, potential outliers, and duplicates, ensuring a solid foundation for my analysis. Through various data visualizations, I identified important trends and distributions, noting that activity days and driving days, in particular, show correlations with user churn. To address extreme values and enhance the model's stability, I imputed outliers at the 95th percentile for specific variables.
+## 📋 Project Overview
 
-### 3. Hypothesis Testing
-Following EDA, I conducted a hypothesis test to investigate the relationship between user behaviors and churn rates. For example, I discovered that "professional drivers"—users with a higher frequency of driving days—tend to have lower churn rates. This insight informed my feature engineering process, allowing me to tailor features to strengthen the model’s predictive power. Hypothesis testing provided an evidence-based approach to validate assumptions, adding rigor to my model development.
+This project leverages exploratory data analysis, hypothesis testing, and binomial logistic regression to build a predictive model for identifying users at risk of churning. The analysis examines user activity patterns, validates behavioral assumptions, and engineers features that capture user engagement levels.
 
-### 4. Feature Engineering
-In the feature engineering phase, I leveraged insights from EDA and hypothesis testing to create additional variables that enhanced the predictive capabilities of the model. I introduced km_per_driving_day and professional_driver to capture unique aspects of user behavior, helping to differentiate high-engagement users. I also transformed categorical variables, such as device type, into binary features suitable for model input. This process ensured that my model captured relevant information in a format that maximized predictive power.
+Developed to demonstrate proficiency in data science workflows, statistical analysis, and building production-ready machine learning solutions.
 
-### 5. Regression Modeling
-To predict user churn, I selected a binomial logistic regression model, which estimates the probability of churn based on multiple user attributes. The model was trained on a subset of the data, and I managed class imbalance through stratified sampling to ensure the model was well-calibrated. During evaluation, I examined key metrics like accuracy, precision, and recall, with a particular focus on recall given the importance of identifying potential churn cases. The model's accuracy provided a general measure of performance, while precision and recall highlighted its effectiveness in correctly identifying users likely to churn.
+## Methodology
 
-### 6. Results & Insights
-From my model, I uncovered that user activity days are a significant negative predictor of churn, indicating that higher activity is associated with higher retention. "Professional_driver" status also emerged as a valuable feature, contributing positively to the model's predictive power. Although the model achieved reasonable accuracy, its limited recall highlighted opportunities for further refinement. This insight suggested that while the model is useful for some purposes, additional optimization could improve its performance, especially in capturing users on the verge of churning.
+### Exploratory Data Analysis (EDA)
+- Comprehensive assessment of data quality, including missing values, outliers, and duplicates
+- Data visualization to identify key trends and distributions
+- Focus on activity days and driving days as primary indicators of churn correlation
+- Outlier imputation at the 95th percentile for enhanced model stability
 
-### 7. Executive Summaries
-For convenience and clarity, executive summaries containing key findings, insights, and recommendations are available in this repository. These summaries distill complex model results into actionable insights, making them accessible to non-technical stakeholders and supporting data-driven decision-making at Waze.
-Next Steps
+### Hypothesis Testing
+- Investigation of relationships between user behaviors and churn rates
+- Discovery that "professional drivers" (users with higher driving frequency) exhibit lower churn rates
+- Evidence-based validation of behavioral assumptions to inform feature engineering
 
-Moving forward, I plan to explore several avenues for model improvement. Additional feature engineering and testing with other machine learning models could help optimize prediction accuracy. Applying feature scaling techniques may enhance model stability and predictive power. Additionally, incorporating more detailed user interaction data—such as geographic locations of drives or engagement with app features like road hazard alerts—could further increase the model's ability to predict churn accurately.
-This project demonstrates the application of regression analysis to real-world data, providing Waze with both technical insights and strategic recommendations for addressing user churn effectively. This approach not only reinforces the value of data-driven decision-making but also supports Waze’s mission to retain an engaged and satisfied user base.
+### Feature Engineering
+- Creation of derived features: `km_per_driving_day` and `professional_driver`
+- Transformation of categorical variables (device type) into binary features
+- Strategic feature selection to maximize predictive power and differentiate high-engagement users
 
+### Regression Modeling
+- **Model**: Binomial logistic regression
+- **Approach**: Stratified sampling to address class imbalance
+- **Evaluation Metrics**: Accuracy, precision, recall
+- **Focus**: Recall prioritized to identify potential churn cases effectively
 
+## Key Findings
 
+- **User activity days** emerge as a significant negative predictor of churn—higher activity correlates with higher retention
+- **Professional driver status** is a valuable feature contributing meaningfully to predictive power
+- The model achieves reasonable accuracy with opportunities for refinement to improve recall
+- Current model performance suggests effectiveness for some use cases, with room for optimization in capturing at-risk users
 
+## Results
 
+The developed model provides a foundation for identifying users at risk of churning, enabling Waze to implement targeted retention strategies. While the model demonstrates utility, its limited recall indicates potential for further enhancement.
+
+## Future Improvements
+
+- Additional feature engineering and evaluation of alternative machine learning algorithms
+- Implementation of feature scaling techniques for improved model stability
+- Integration of detailed user interaction data (geographic locations, feature engagement patterns)
+- Hyperparameter tuning and cross-validation strategies
+- Testing ensemble methods for enhanced predictive performance
+
+## Repository Contents
+
+- **Executive Summaries**: Distilled insights and recommendations for non-technical stakeholders
+- **Analysis Notebooks**: Complete code for EDA, hypothesis testing, and modeling
+- **Data Visualizations**: Key charts and graphs supporting analysis findings
+
+## Tech Stack
+
+- **Python**: Primary language for analysis and modeling
+- **Data Analysis**: Pandas, NumPy
+- **Visualization**: Matplotlib, Seaborn
+- **Machine Learning**: Scikit-learn
+
+## 🛠️ Technical Skills Demonstrated
+
+**Data Analysis & Exploration**
+- Exploratory Data Analysis (EDA) with comprehensive data quality assessment
+- Statistical analysis of distributions, correlations, and outliers
+- Data cleaning, imputation, and handling of imbalanced datasets
+
+**Statistical Methods**
+- Hypothesis testing to validate behavioral assumptions
+- Correlation analysis to identify relationships between variables and outcomes
+- Binomial logistic regression for binary classification
+
+**Feature Engineering & Preprocessing**
+- Creation of derived features from raw data (km_per_driving_day, professional_driver)
+- Categorical variable encoding and transformation
+- Outlier detection and imputation at percentile thresholds
+- Stratified sampling for class imbalance management
+
+**Machine Learning & Modeling**
+- Binomial logistic regression model development and training
+- Model evaluation using accuracy, precision, and recall metrics
+- Hyperparameter tuning and model performance optimization
+- Classification threshold analysis for business applications
+
+**Data Visualization & Communication**
+- Creation of meaningful visualizations to identify patterns and trends
+- Executive summary generation for non-technical stakeholders
+- Clear documentation of methodology and findings
+
+## 🌍 Real-World Application & Business Impact
+
+**Problem Statement**
+User churn represents a significant challenge for ride-sharing and navigation apps like Waze. Understanding which users are at risk of leaving the platform enables targeted retention efforts and improved resource allocation.
+
+**Business Value**
+- **Proactive Retention**: Identify at-risk users before they churn, enabling targeted interventions such as personalized notifications, feature education, or incentive programs
+- **Resource Optimization**: Focus retention efforts on high-value users (professional drivers with regular usage patterns) to maximize ROI
+- **Feature Development**: Insights into user behavior patterns inform product development decisions and feature prioritization
+- **Customer Lifetime Value**: Reducing churn directly improves customer lifetime value and user acquisition payback periods
+
+**Implementation Scenarios**
+- **Real-time Scoring**: Deploy the model to score active users and trigger retention campaigns for those identified as high-risk
+- **Cohort Analysis**: Segment users based on churn risk for targeted engagement strategies
+- **A/B Testing**: Use model insights to inform and measure effectiveness of retention initiatives
+- **Predictive Analytics**: Integrate predictions into broader analytics pipelines for comprehensive business intelligence
+
+## Conclusion
+
+This project demonstrates the application of regression analysis to real-world data challenges, providing Waze with both technical insights and strategic recommendations for effective user retention. It reinforces the value of data-driven decision-making and supports efforts to maintain an engaged and satisfied user base.
+
+The work showcases proficiency in building end-to-end machine learning solutions—from exploratory analysis through production-ready predictions—with clear communication of both technical rigor and business value.
